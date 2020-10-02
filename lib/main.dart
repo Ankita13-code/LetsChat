@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lets_chat/Auth/login.dart';
+import 'package:lets_chat/Auth/loginScreen.dart';
 
 void main() {
   runApp(MyApp());

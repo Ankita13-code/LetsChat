@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'GoogleSignIn.dart';
+
 class LoginScreen extends StatefulWidget {
   @override
   _LoginScreenState createState() => _LoginScreenState();
@@ -29,7 +31,18 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget _signInButton() {
     return OutlineButton(
       splashColor: Colors.grey,
-      onPressed: () {},
+      onPressed: () {
+      signInWithGoogle().then((result) {
+        if (result != null) {
+          Navigator.of(context).push(
+              MaterialPageRoute(
+                  builder: (context) {
+                    return Container();
+                  }));
+        }
+      });
+          },
+
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
       highlightElevation: 0,
       borderSide: BorderSide(color: Colors.grey),
